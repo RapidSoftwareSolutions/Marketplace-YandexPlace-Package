@@ -1,0 +1,99 @@
+{
+	"package": "YandexPlace",
+	"tagline": "Yandex API",
+	"description": "Yandex is a Russian multinational technology company specializing in Internet-related services and products. Yandex operates the largest search engine in Russia with about 65% market share in that country.The purpose of the Places API is to search for geographical features businesses.",
+	"image": "https://lh3.googleusercontent.com/-kN9hEkXi1fY/AAAAAAAAAAI/AAAAAAAACGg/SadVXk_e3Q4/s640/photo.jpg",
+	"repo": "",
+	"keywords": [
+		"API",
+		"Place",
+		"Map",
+		"Yandex",
+		"Coordinates",
+		"Address"
+	],
+	"accounts": {
+		"domain": "yandex.com",
+    "credentials": [
+      "apikey",
+      "key"
+    ]
+	},
+	"blocks": [
+
+
+		{
+			"name": "searchByOrganization",
+			"description": "Search service by organizations is designed to search for geographical objects (toponyms) and organizations. The service allows you to search for houses, streets, attractions, cafes and other facilities.",
+			"args": [{
+					"name": "apikey",
+					"type": "Credentials",
+					"info": "apikey for Yandex Place.",
+					"required": true
+				},
+				{
+					"name": "text",
+					"type": "String",
+					"info": "The text of the search query. For example, the name of the geographical object, address, coordinates, organization name, telephone.",
+					"required": true
+				},
+				{
+					"name": "lang",
+					"type": "String",
+					"info": "Preferred response language.",
+					"required": true
+				},
+				{
+					"name": "ll",
+					"type": "Map",
+					"info": "Search area center. It is determined with the help of longitude and latitude, separated by a comma.Used in conjunction with the parameter spn.",
+					"required": false
+				},
+				{
+					"name": "spn",
+					"type": "String",
+					"info": "Dimensions of the search area. It is determined by means of lengths in longitude and latitude, separated by a comma.",
+					"required": false
+				},
+				{
+					"name": "bbox",
+					"type": "String",
+					"info": "An alternative way to specify a search scope (see ll + spn).",
+					"required": false
+				},
+				{
+					"name": "rspn",
+					"type": "Number",
+					"info": "A sign of a 'hard' limitation of the search area,1 or 0.",
+					"required": false
+				},
+				{
+					"name": "results",
+					"type": "Number",
+					"info": "Number of objects returned. The default is 10. The maximum allowable value is 500.",
+					"required": false
+				},
+				{
+					"name": "skip",
+					"type": "Number",
+					"info": "The number of objects in the response (starting with the first) that you want to skip.",
+					"required": false
+				}
+
+
+			],
+			"callbacks": [{
+					"name": "error",
+					"info": "Error"
+				},
+				{
+					"name": "success",
+					"info": "Success"
+				}
+			]
+		}
+	]
+
+
+
+}
