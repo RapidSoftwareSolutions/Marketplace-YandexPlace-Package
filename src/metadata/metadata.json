@@ -2,8 +2,8 @@
 	"package": "YandexPlace",
 	"tagline": "Yandex API",
 	"description": "Yandex is a Russian multinational technology company specializing in Internet-related services and products. Yandex operates the largest search engine in Russia with about 65% market share in that country.The purpose of the Places API is to search for geographical features businesses.",
-	"image": "https://lh3.googleusercontent.com/-kN9hEkXi1fY/AAAAAAAAAAI/AAAAAAAACGg/SadVXk_e3Q4/s640/photo.jpg",
-	"repo": "",
+	"image": "https://logo.clearbit.com/yandex.com",
+	"repo": "https://github.com/RapidSoftwareSolutions/Marketplace-YandexPlace-Package",
 	"keywords": [
 		"API",
 		"Place",
@@ -15,8 +15,7 @@
 	"accounts": {
 		"domain": "yandex.com",
     "credentials": [
-      "apikey",
-      "key"
+      "apiKey"
     ]
 	},
 	"blocks": [
@@ -26,7 +25,7 @@
 			"name": "searchByOrganization",
 			"description": "Search service by organizations is designed to search for geographical objects (toponyms) and organizations. The service allows you to search for houses, streets, attractions, cafes and other facilities.",
 			"args": [{
-					"name": "apikey",
+					"name": "apiKey",
 					"type": "Credentials",
 					"info": "apikey for Yandex Place.",
 					"required": true
@@ -40,35 +39,35 @@
 				{
 					"name": "lang",
 					"type": "String",
-					"info": "Preferred response language.",
+					"info": "Preferred response language.Example en_US.",
 					"required": true
 				},
 				{
-					"name": "ll",
+					"name": "mapCenter",
 					"type": "Map",
-					"info": "Search area center. It is determined with the help of longitude and latitude, separated by a comma.Used in conjunction with the parameter spn.",
+					"info": "Search area center. It is determined with the help of longitude and latitude, separated by a comma.Used in conjunction with the parameter mapExtent.",
 					"required": false
 				},
 				{
-					"name": "spn",
+					"name": "mapExtent",
 					"type": "String",
-					"info": "Dimensions of the search area. It is determined by means of lengths in longitude and latitude, separated by a comma.",
+					"info": "Dimensions of the search area. It is determined by means of lengths in longitude and latitude, separated by a comma.Use with mapCenter param.",
 					"required": false
 				},
 				{
-					"name": "bbox",
+					"name": "alterCord",
 					"type": "String",
-					"info": "An alternative way to specify a search scope (see ll + spn).",
+					"info": "An alternative way to specify a search scope (see mapCenter + mapExtent).",
 					"required": false
 				},
 				{
-					"name": "rspn",
+					"name": "hardLimitation",
 					"type": "Number",
-					"info": "A sign of a 'hard' limitation of the search area,1 or 0.",
+					"info": "A sign of a 'hard' limitation of the search area,1 or 0. Use with alterCord or mapExtent + mapCenter.",
 					"required": false
 				},
 				{
-					"name": "results",
+					"name": "resultsLimit",
 					"type": "Number",
 					"info": "Number of objects returned. The default is 10. The maximum allowable value is 500.",
 					"required": false

@@ -1,38 +1,49 @@
 <?php
     $app->post('/api/YandexPlace/serchByOrganization', function ($request, $response) {
 
+      // all param
+      // alias => vendor name
+      $option = array(
+       'text' => 'text',
+       'mapCenter' => 'll',
+       'mapExtent' => 'spn',
+       'skip' => 'skip',
+       'resultsLimit' => 'results',
+       'lang' => 'lang',
+       'apiKey' => 'apikey',
+       'alterCord' => 'bbox',
+       'hardLimitation' => 'rspn'
+       );
 
-          //optional params
-
-          $option = array('ll','spn','bbox','rspn','type','results','skip');
+       $arrayType = array();
 
 
           $settings = $this->settings;
           $checkRequest = $this->validation;
-          $validateRes = $checkRequest->validate($request, ['apikey','text','lang']);
+          $validateRes = $checkRequest->validate($request, ['apiKey','text','lang']);
 
 
           if(!empty($validateRes) && isset($validateRes['callback']) && $validateRes['callback']=='error') {
               return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($validateRes);
           } else {
-              $post_data = $validateRes;
+              $postData = $validateRes;
           }
 
           $url = 'https://search-maps.yandex.ru/v1/';
 
 
-
-          $cords = $post_data['args']['ll'];
           $client = $this->httpClient;
-          $queryParam = array('apikey' => $post_data['args']['apikey'],'text' => $post_data['args']['text'],'lang' => $post_data['args']['lang'],'type' => 'biz');
-
-          foreach($option as $key => $value)
-          {
-            if(!empty($post_data['args'][$value]))
+          foreach($option as $alias => $value)
             {
-              $queryParam[$value] = $post_data['args'][$value];
+              if(!empty($postData['args'][$alias]))
+              {
+                  if(in_array($alias,$arrayType))
+                  {
+                    $postData['args'][$alias] = implode(',',$postData['args'][$alias]);
+                  }
+                  $queryParam[$value] = $postData['args'][$alias];
+              }
             }
-          }
 
           $resp =  $client->request('GET', $url ,['query' => $queryParam ] );
 
