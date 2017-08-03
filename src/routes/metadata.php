@@ -1,6 +1,6 @@
 <?php
 
-$app->get('/api/YandexPlace', function ($request, $response, $args) {
+$app->get('/api/YandexPlaces', function ($request, $response, $args) {
 
     $newStream = new \GuzzleHttp\Psr7\LazyOpenStream(__DIR__ . '/../../src/metadata/metadata.json', 'r');
     $newResponse = $response->withHeader('Content-type', 'application/json')->withStatus(200)->withBody($newStream);
