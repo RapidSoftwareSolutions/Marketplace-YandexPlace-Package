@@ -3,7 +3,7 @@
 	"tagline": "Yandex API",
 	"description": "Yandex is a Russian multinational technology company specializing in Internet-related services and products. Yandex operates the largest search engine in Russia with about 65% market share in that country.The purpose of the Places API is to search for geographical features businesses.",
 	"image": "https://logo.clearbit.com/yandex.com",
-	"repo": "https://github.com/RapidSoftwareSolutions/Marketplace-YandexPlace-Package",
+	"repo": "https://github.com/RapidSoftwareSolutions/Marketplace-YandexPlaces-Package",
 	"keywords": [
 		"API",
 		"Place",
