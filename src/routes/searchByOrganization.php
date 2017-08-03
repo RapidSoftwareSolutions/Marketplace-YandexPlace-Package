@@ -1,5 +1,5 @@
 <?php
-    $app->post('/api/YandexPlace/serchByOrganization', function ($request, $response) {
+    $app->post('/api/YandexPlaces/serchByOrganization', function ($request, $response) {
 
       // all param
       // alias => vendor name
