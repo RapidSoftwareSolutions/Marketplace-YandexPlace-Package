@@ -45,7 +45,13 @@
               }
             }
 
-          $resp =  $client->request('GET', $url ,['query' => $queryParam ] );
+        if(!empty($queryParam['ll'])){
+            $coordinates[0] = trim(explode(",",$queryParam['ll'])[0]);
+            $coordinates[1] = trim(explode(",",$queryParam['ll'])[1]);
+            $queryParam['ll'] = $coordinates[1] . "," . $coordinates[0];
+        }
+
+        $resp =  $client->request('GET', $url ,['query' => $queryParam ] );
 
          try {
 
