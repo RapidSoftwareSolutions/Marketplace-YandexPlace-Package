@@ -37,7 +37,7 @@
 					"required": true
 				},
 				{
-					"name": "lang",
+					"name": "language",
 					"type": "String",
 					"info": "Preferred response language.Example en_US.",
 					"required": true
@@ -49,21 +49,21 @@
 					"required": false
 				},
 				{
-					"name": "mapExtent",
+					"name": "searchAreaSize",
 					"type": "String",
-					"info": "Dimensions of the search area. It is determined by means of lengths in longitude and latitude, separated by a comma.Use with mapCenter param.",
+					"info": "Dimensions of the search area. It is determined by means of lengths in longitude and latitude, separated by a comma.Use with mapCenter param.Example - 					0.552069,0.400552 . ",
 					"required": false
 				},
 				{
-					"name": "alterCord",
+					"name": "alternativeSearch",
 					"type": "String",
-					"info": "An alternative way to specify a search scope (see mapCenter + mapExtent).",
+					"info": "An alternative way to specify a search scope (see mapCenter + viewportRange).Example - 36.83,55.67~38.24,55.91.",
 					"required": false
 				},
 				{
-					"name": "hardLimitation",
-					"type": "Number",
-					"info": "A sign of a 'hard' limitation of the search area,1 or 0. Use with alterCord or mapExtent + mapCenter.",
+					"name": "",
+					"type": "List",
+					"info": "A sign of a 'hard' limitation of the search area,1 or 0. Use with alternativeSearch or viewportRange + mapCenter.",
 					"required": false
 				},
 				{
@@ -77,7 +77,14 @@
 					"type": "Number",
 					"info": "The number of objects in the response (starting with the first) that you want to skip.",
 					"required": false
-				}
+				},
+				{
+				 "name": "searchAreaRestriction",
+				 "type": "Select",
+				 "options": ["On"],
+				 "info": "A sign of a 'hard' limitation of the search area. Use with alternativeSearch or viewportRange + mapCenter.",
+				 "required": false
+			 }
 
 
 			],

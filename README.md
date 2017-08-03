@@ -30,8 +30,8 @@ Search service by organizations is designed to search organizations. The service
 | text   | String     | The text of the search query. For example, the name of the geographical object, address, coordinates, organization name, telephone. Examples (without URL encoding): text=swan lake; text=55.750788,37.618534; text=Saint Petersburg, 15 Blohina ulitsa; text=+7 495 739-70-70 ;text=Yandex, Ltd.
 | lang   | String     | Preferred response language.
 | mapCenter     | Map        | Search area center. It is determined with the help of longitude and latitude, separated by a comma.Used in conjunction with the parameter mapExtent .
-| mapExtent    | String     | Dimensions of the search area. It is determined by means of lengths in longitude and latitude, separated by a comma.Use with mapCenter param.
-| alterCord   | String     | An alternative way to specify a search scope (see mapCenter + mapExtent).The borders of the search area are defined as the geographical coordinates of the lower-left and upper-right corners of the area (in the order "longitude, latitutude").
+| viewportRange    | String     | Dimensions of the search area. It is determined by means of lengths in longitude and latitude, separated by a comma.Use with mapCenter param.Example - 0.552069,0.400552 . 
+| alternativeSearch   | String     | An alternative way to specify a search scope (see mapCenter + mapExtent).The borders of the search area are defined as the geographical coordinates of the lower-left and upper-right corners of the area (in the order "longitude, latitutude").Example - 36.83,55.67~38.24,55.91.
 | hardLimitation   | Number     | A sign of a 'hard' limitation of the search area,1 or 0.Use with alterCord or mapExtent + mapCenter.
 | resultsLimit| Number     | Number of objects returned. The default is 10. The maximum allowable value is 500.
 | skip   | Number     | The number of objects in the response (starting with the first) that you want to skip.

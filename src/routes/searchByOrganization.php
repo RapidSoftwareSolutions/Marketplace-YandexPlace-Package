@@ -6,13 +6,13 @@
       $option = array(
        'text' => 'text',
        'mapCenter' => 'll',
-       'mapExtent' => 'spn',
+       'searchAreaSize' => 'spn',
        'skip' => 'skip',
        'resultsLimit' => 'results',
-       'lang' => 'lang',
+       'language' => 'lang',
        'apiKey' => 'apikey',
-       'alterCord' => 'bbox',
-       'hardLimitation' => 'rspn'
+       'alternativeSearch' => 'bbox',
+       'searchAreaRestriction' => 'rspn'
        );
 
        $arrayType = array();
@@ -20,7 +20,7 @@
 
           $settings = $this->settings;
           $checkRequest = $this->validation;
-          $validateRes = $checkRequest->validate($request, ['apiKey','text','lang']);
+          $validateRes = $checkRequest->validate($request, ['apiKey','text','language']);
 
 
           if(!empty($validateRes) && isset($validateRes['callback']) && $validateRes['callback']=='error') {
@@ -33,6 +33,13 @@
 
 
           $client = $this->httpClient;
+          //include hard limitation
+          if(!empty($postData['args']['searchAreaRestriction'][0]) && $postData['args']['searchAreaRestriction'][0] == 'On')
+          {
+            $postData['args']['searchAreaRestriction'] = 1;
+          }
+
+
           foreach($option as $alias => $value)
             {
               if(!empty($postData['args'][$alias]))
@@ -60,7 +67,7 @@
                  $result['callback'] = 'success';
 
 
-                 $result['contextWrites']['to'] =   $responseBody;
+                 $result['contextWrites']['to'] =   array('status' => 'success','result' => $responseBody);
 
 
              } else {
@@ -96,3 +103,4 @@
          }
          return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($result);
 });
+
