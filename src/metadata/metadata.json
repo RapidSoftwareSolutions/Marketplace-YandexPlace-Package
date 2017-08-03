@@ -51,19 +51,13 @@
 				{
 					"name": "searchAreaSize",
 					"type": "String",
-					"info": "Dimensions of the search area. It is determined by means of lengths in longitude and latitude, separated by a comma.Use with mapCenter param.Example - 					0.552069,0.400552 . ",
+					"info": "Dimensions of the search area. It is determined by means of lengths in longitude and latitude, separated by a comma.Use with mapCenter param.Example - 0.552069,0.400552 . ",
 					"required": false
 				},
 				{
 					"name": "alternativeSearch",
 					"type": "String",
 					"info": "An alternative way to specify a search scope (see mapCenter + viewportRange).Example - 36.83,55.67~38.24,55.91.",
-					"required": false
-				},
-				{
-					"name": "",
-					"type": "List",
-					"info": "A sign of a 'hard' limitation of the search area,1 or 0. Use with alternativeSearch or viewportRange + mapCenter.",
 					"required": false
 				},
 				{
