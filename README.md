@@ -1,6 +1,6 @@
 [![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/Yandex/functions?utm_source=RapidAPIGitHub_YandexFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
 
-# YandexPlace Package
+# YandexPlaces Package
 Yandex is a Russian multinational technology company specializing in Internet-related services and products. Yandex operates the largest search engine in Russia with about 65% market share in that country.The purpose of the Places API is to search for geographical features (toponyms) and businesses.
                                                                                                                                                                                                              The search can be performed in two directions. Forward search means using a search query to get the coordinates of places, and reverse search means using coordinates to find places.
 * Domain: [yandex.com](https://yandex.com)
@@ -21,7 +21,7 @@ Yandex is a Russian multinational technology company specializing in Internet-re
 
 
 
-## YandexPlace.searchByOrganization
+## YandexPlaces.searchByOrganization
 Search service by organizations is designed to search organizations. The service allows you to search for houses, streets, attractions, cafes and other facilities.
 
 | Field  | Type       | Description
